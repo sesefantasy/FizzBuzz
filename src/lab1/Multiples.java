@@ -1,21 +1,23 @@
 package lab1;
 
 public class Multiples {
-    public static void main(String[] args) {
-        int i = 1;
-        int total = 0;
-        while (i < 1000) {
 
-            // Find out which numbers divide i.
-            boolean divisibleBy3 = i % 3 == 0;
-            boolean divisibleBy5 = i % 5 == 0;
-            // Print our appropriate result.
-            if (divisibleBy3) {
-                total++;
-            }  else if (divisibleBy5) {
-                total++;
+    public static void main(String[] args) {
+        int count = multiples(1000, 3, 5);
+        System.out.println(count); // should print 466
+    }
+
+    public static int multiples(int n, int a, int b) {
+        int count = 0;
+        for (int i = 1; i < n; i++) {
+            if (i % a == 0 || i % b == 0) {
+                count++;
             }
-            i++;
-        } System.out.println(total);
+        }
+        return count;
+    }
+
+    public static int multiples() {
+        return multiples(1000, 3, 5);
     }
 }
